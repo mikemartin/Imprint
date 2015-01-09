@@ -1,0 +1,160 @@
+////////////////////////////
+//////     FOOTER     //////
+////////////////////////////
+
+footer[role=contentinfo]{
+	background: $base-color url(../../images/bg-crystal.jpg) center top;
+	color: $white;
+	border-top: 7px solid $alt-color;
+	margin-top: $double-unit;
+
+	h1, h2, h3, h4 {
+		color: inherit;
+	}
+	h4 {
+		text-transform: uppercase;
+	}
+	a {
+		color:$white;
+		text-decoration:none;
+		&:hover{
+			color:  $alt-color;
+		}
+	}
+	
+	small{
+		@include boxmodel();
+		width: 100%;
+		text-align: left;
+		display:block;
+		a{
+			text-decoration:none;
+			color: $white;
+			&:hover{
+				color: $alt-color ;
+			}
+		}
+	}
+
+	.social-menu {
+		margin-bottom: 0;
+		 li { margin-bottom: 0; }
+		 li + li {
+		 	border: 0px;
+		 }
+		.ss-icon {
+			font-size: 30px;
+		}
+	}
+
+	.site-info {
+		font-size: $mini-size;
+	}
+
+	.site-branding {
+		padding: $base-unit 0;
+	}
+
+	// Newsletter signup
+	.newsletter-signup {
+		padding-left: 45px;
+		padding-top: 24px;
+		border-left: 1px solid #6c6d6d;
+
+
+		label {
+			display: none;
+		}
+		.gform_footer {
+			vertical-align: top;
+		}
+		.gform_heading {
+			overflow: hidden;
+			display: block;
+			.gform_title {
+				padding-right: 55px;
+				position: relative;
+				float: left;
+				line-height: 28px;
+			}
+			.gform_title:after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				content: "";
+				height: 28px;
+				width: 40px;
+				background: url('../../images/icon-email.png') no-repeat;
+			}
+		}
+	
+		.gform-wrapper .gform-heading {
+			display: none !important;
+		}
+	}
+
+	
+	.footer-social {
+		background: #2c2c2c;
+		padding: $base-unit 0 50px 0;
+		a {
+		  color: $alt-color;
+		}
+		h4 { margin-bottom: $half-unit; }
+
+		// Bottom links
+		.bottom-links {
+			margin-left: 0;
+			padding-left: 0;
+			list-style: none;
+			font-family: $heading-font-family;
+			text-transform: uppercase;
+
+			li {
+				border-bottom: 1px solid rgba(255,255,255,.1);
+				margin-bottom: 0;
+				background: url('../../images/arrow-right.png') center right no-repeat;
+			}
+
+			a {
+				color: $white;
+				&:hover {
+					color: $alt-color;
+				}
+			}
+		}
+	}
+
+	.footer-signup {
+		border: 1px solid #575858;
+		border-width: 1px 0;	
+	}
+
+	.footer-nav {
+		text-align: center;
+		padding: $base-unit 0;
+	}
+
+	.site-info {
+		background: #202020;
+		text-align: center;
+		padding-bottom: $double-unit;
+		padding-top: $base-unit;
+	}
+}
+
+
+#footer-nav {
+	text-align: center;
+	margin: 0;
+	margin-bottom:10px;
+	text-transform: uppercase;
+	font-family: "futura-pt", sans-serif;
+	-webkit-font-smoothing: antialiased;
+
+	li {
+		@include inline-block();
+		padding: 0 15px;
+		margin-bottom: 0;
+	}
+}

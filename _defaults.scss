@@ -1,0 +1,86 @@
+//////////////////////////////////////
+//////         DEFAULTS        ////////
+//////////////////////////////////////
+
+/* Color Palette
+   ========================================================================== */
+
+$base-color: #363636;
+$alt-color: #f33c33;
+
+$black: #202020;
+$grey: #d2d2d2;
+$light-grey: #eeeeee;
+$white: #FFF;
+
+$text-color: #414a51;
+
+/* Typography
+   ========================================================================== */
+
+// ----- Base ----- //   
+$base-font-family: "droid-serif", sans-serif;
+$base-font-size: 16px;
+$base-line-height: 32px;
+$line-height-ratio: $base-line-height / $base-font-size; 
+
+// ----- Heading sizes ----- //   
+$heading-font-family: "droid-sans", sans-serif;
+$h1-size: 48px;
+$h2-size: 24px;
+$h3-size: 20px; // lead size
+$h4-size: 18px;
+
+// ----- Alternate type sizes ----- //  
+$mega-size: 54px;
+$mini-size: 11px;
+
+// ----- Button type sizes ----- //  
+$btn-font: "futura-pt", sans-serif;
+$btn-size: 18px;
+$btn-lg-size: 27px;
+
+// ----- Spacing units ----- //   
+$base-unit: $base-line-height;
+$half-unit: $base-line-height / 2;
+$double-unit: $base-line-height * 2;
+
+// ----- Reset Font-size mixin defaults ----- //   
+@mixin font-size( $fontSize:$base-font-size, $baseSize: $base-font-size) {
+	font-size: $fontSize;
+	font-size: ($fontSize / $baseSize) * 1rem;
+}
+@mixin line-height( $lineSize:$base-line-height, $baseSize: $base-font-size) {
+	line-height: $lineSize;
+	line-height: ($lineSize/$baseSize) * 1rem;
+}
+
+$row-width: 68em;
+
+/* Border-radius
+   ========================================================================== */
+$radius: 0px;
+
+/* Media queries breakpoints
+   ========================================================================== */
+
+// ----- Extra small screen / phone ----- // 
+$screen-xs-min:     480px;
+
+// ----- Small screen / tablet ----- // 
+$screen-sm-min:     768px;
+
+// ----- Medium screen / desktop ----- // 
+$screen-md-min:     992px;
+
+// ----- Large screen / wide desktop ----- // 
+$screen-lg-min:     1200px;
+
+// ----- So media queries don't overlap when required, provide a maximum ----- // 
+$screen-xs-max:     ($screen-xs-min - 1);
+$screen-sm-max:     ($screen-sm-min - 1);
+$screen-md-max:     ($screen-md-min - 1);
+$screen-lg-max:     ($screen-lg-min - 1);
+
+
+

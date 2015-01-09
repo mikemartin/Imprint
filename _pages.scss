@@ -1,0 +1,391 @@
+///////////////////////////////
+//////     HOME PAGE     //////
+///////////////////////////////
+.title-wrapper, .hero, .register-panel {
+	background: #240707;
+	text-align: center;
+	height: 210px;
+	width: 100%;
+	display: table;
+	overflow: hidden;
+	position: relative;
+	color: $white;
+	//margin-top: $base-unit * -1;
+	@include box-shadow(inset 0 -20px 0 rgba(255, 255, 255, 0.2));
+
+	.hero-logo {
+		margin-top: $base-unit;
+		margin-bottom: $base-unit;
+		img { 
+			background: none; 
+			margin: 0;
+
+			@media screen and (max-width:$screen-sm-max){ 
+				max-width: 60%;
+			}
+		}
+	}
+
+	.subheader {
+		background: none;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		line-height: $base-unit;
+		margin-bottom: 40px;
+		padding: 0;
+		@media screen and (max-width:$screen-sm-max){ 
+			font-size: $h3-size;
+			line-height: 1.4;
+		}
+	}
+	.button.secondary {
+		@extend .button-inverse;
+	}
+
+	.container {
+		width: 100%;
+		display: table-cell;
+		position: relative;
+		vertical-align: middle;
+		z-index: 1;
+	}
+	h1 {
+		color: $white;
+	}
+}
+
+.register-panel {
+	height: 600px;
+	margin-bottom: 50px;
+
+	.button {
+		margin-top: $half-unit;
+	}
+	
+	.cover {
+		background-image: url('../../images/bg-register.jpg');
+	}
+	@media screen and (min-width:$screen-sm-min){ 
+		height: 500px;
+	}
+}
+
+.title-wrapper {
+	height: 210px !important;
+	padding: 0;
+	border: 0;
+}
+
+.hero {
+	height: 500px;
+
+	@media screen and (min-width:$screen-sm-min){ 
+		height: 700px;
+		padding-top: 120px;
+	}
+}
+
+.header-home {
+	margin-bottom: 40px;
+	.site-header {
+		background: rgba(0,0,0,.35);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 3000;
+	}
+	.top-banner {
+		background: rgba($alt-color,.2);
+	}
+
+	#main-nav {
+		text-align: left;
+	}
+
+	.nav-register {
+		position: absolute;
+		right: 0;
+	}
+
+	.event-details {
+		display: none;
+	}
+
+	.navigation-main {
+		margin-left: 0;
+	}
+	#main-nav .nav-register a {
+		background: 0;
+		border: 0;
+		box-shadow: none;
+		color: $alt-color;
+		font-size: $h4-size;
+		padding-top: 26px;
+	}
+}
+
+.hero-bg {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	overflow: hidden;
+	opacity: .4;
+	-ms-filter: "alpha(Opacity=40)";
+	filter: alpha(opacity=40);
+}
+.cover {
+	width: 100%;
+	height: 125%;
+	display: block;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-position: center top;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	background-image: url('../../images/hero-home.jpg');
+}
+
+.hero, .title-wrapper {
+
+}
+
+///////////////////////////
+//////     PAGES     //////
+///////////////////////////
+
+.profile {
+	img {
+		width: 100%;
+	}
+	.profile-name {
+		text-transform: uppercase;
+	}
+	.profile-title {
+		color: $alt-color;
+		line-height: 1.4;
+	}
+}
+
+// article:nth-of-type(odd) {
+// 	background: $light-grey;
+// }
+.entry-header {
+	margin-bottom: $half-unit;
+	.entry-title {
+		color: $alt-color;
+		background: none;
+		padding: 0;
+		margin: 0;
+	}
+	.entry-meta {
+		color: $base-color;
+		font-family: inherit;
+		font-style: italic;
+		font-weight: inherit;
+		margin: 0;
+	}
+}
+
+.social-menu {
+	overflow: hidden;
+	margin-top: 0;
+	li {
+		display: inline-block !important;
+	}
+	li + li {
+		border: 0 solid $base-color;
+		border-left-width: 2px;
+	}
+	.ss-icon {
+		font-size: $h4-size;
+		padding: 0 10px;
+		display: block;
+		line-height: 1.3;
+		&:hover {
+			color: $alt-color;
+		}
+	}
+	li:first-child .ss-icon {
+		padding-left: 0;
+	}
+}
+
+///////////////////////////////
+//////     ABOUT PAGE     //////
+///////////////////////////////
+
+
+.section-container {
+	border: 0px;
+	> section > .title {
+		background: none !important;
+		border-top: 0;
+		border-bottom: solid 1px $light-grey;
+		padding: 0;
+		a {
+			color: $alt-color !important;
+			padding: $half-unit 0;
+			white-space: normal;
+			&:after {
+				content: "";
+				width: $h4-size;
+				height: $h4-size;
+				display: block;
+				float: right;
+				background: url(../../images/arrow-down.png) top center no-repeat;
+			}
+		}
+	}
+	> section > .content {
+		padding: 0 0 $half-unit 0;
+	}
+}
+
+
+
+///////////////////////////////
+//// CONFERENCE ITINERARY  ////
+///////////////////////////////
+
+
+.itinerary {
+	.event {
+		@media screen and (min-width:$screen-sm-min){ 
+			padding: 0 20px 0 0;
+		}
+	}
+	.event-title {
+		color: $alt-color;
+		margin-top: 20px;
+	}
+	.event-speakers {
+		font-family: $heading-font-family;
+		font-size: $h4-size;
+		font-weight: bold;
+		margin: 0;
+		li + li:before {
+			content: "|";
+		}
+		a {
+			color: $text-color;
+		}
+		a:hover {
+			color: $alt-color;
+		}
+	}
+	.event-icon {
+		img {
+			margin: 0;
+			display: block;
+		}
+	}
+}
+
+
+.tweet-panel {
+	text-align: center;
+	padding: 40px 0 $base-unit 0;
+	font-style: italic;
+	font-size: $h4-size;
+	position: relative;
+	background: #f5f5f5 url(../../images/tweet-down.png) top center no-repeat;
+	&:after {
+		position: absolute;
+		left: 0; 
+		bottom: -11px;
+		height: 15px;
+		width: 100%;
+		content: "";
+		background: url(../../images/shadow.png) center center no-repeat;
+	}
+	.tweet_list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			margin: 0;
+		}
+	}
+	.tweet_user {
+		font-style: italic;
+		display: block;
+		color: #666;
+		&:before {
+			content: "twitter";
+			font-family: "SSSocial";
+			font-style: normal;
+			font-weight: normal;
+			font-size: 42px;
+			text-decoration: none;
+			text-rendering: optimizeLegibility;
+			white-space: nowrap;
+			-moz-font-feature-settings: "liga=1";
+			-moz-font-feature-settings: "liga";
+			-ms-font-feature-settings: "liga" 1;
+			-o-font-feature-settings: "liga";
+			font-feature-settings: "liga";
+			-webkit-font-smoothing: antialiased;
+			color: #626262;
+			display: block;
+			line-height: 42px;
+			margin: 0;
+		}
+	}	
+	.tweet_time, .tweet_text {
+		display: block;
+	}
+}
+
+
+.speaker-panel {
+	background: #f9f8f7 url(../../images/lightpaperfibers.png) center center;
+	padding-top: $double-unit;
+	padding-bottom: $double-unit;
+}
+
+.sponsor-panel {
+	h1 {
+		margin-bottom: $base-unit;
+	}
+}
+
+.contact-panel {
+	.button {
+		float: right;
+	}
+}
+
+///////////////////////////////
+//////   SPONSORS PAGE   //////
+///////////////////////////////
+
+.sponsors-list {
+	.sponsor-item {
+		display: block;
+		border: 1px solid $light-grey;
+		background-repeat: no-repeat;
+		background-position: top right;
+		background-image: url(../../images/sponsor-web.png);
+		img {
+			margin: 0;
+		}
+	}
+	.sponsor-print { background-image: url(../../images/sponsor-print.png); }
+	.sponsor-web { background-image: url(../../images/sponsor-web.png); }
+	.sponsor-media { background-image: url(../../images/sponsor-media.png); }
+}

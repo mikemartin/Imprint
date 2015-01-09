@@ -1,0 +1,201 @@
+//////////////////////////////////
+//////     BANNER & NAV     //////
+//////////////////////////////////
+
+.top-banner {
+	background: $black;
+	font-family: "futura-pt", sans-serif;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	font-size: 13px;
+	line-height: 32px;
+	color: $white;
+	.event-details {
+		float: left;
+		.event-date {
+			color: $alt-color;
+		}
+	}
+	.menu, .menu li {
+		margin: 0;
+	}
+	.social-menu li {
+		border-left: 0;
+		border-right: 1px solid rgba(255,255,255,.1);
+		&:first-child {
+			border-left: 1px solid rgba(255,255,255,.1);
+			.ss-icon { padding-left: 11px; }
+		}
+	}
+	.social-menu .ss-icon {
+		color: $white;
+		font-size: 16px;
+		padding: 8px 11px;
+	}
+	.social-menu-label {
+		padding-right: $half-unit;
+	}
+}
+header[role=banner] {
+	background: $base-color url(../../images/bg-crystal.jpg) center top;
+	font-family: "futura-pt", sans-serif;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+
+	.site-branding {
+		text-align: left;
+	}
+	.site-branding img {
+		max-height: 32px;
+		margin: 10px 0;
+	}
+
+	@media screen and (min-width:$screen-sm-min){ 
+		.site-branding img {
+			max-height: 60px;
+			margin-top: 12px;
+		}
+	}
+}
+
+.header-fixed {
+	position: fixed !important;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+}
+
+.navigation-main {
+	padding-right: 0;
+}
+#main-nav {
+	height: auto;
+	margin: 0;
+	text-decoration: none;
+	text-align: right;
+	background: none;
+	width: 100%;
+	font-size: 14px;
+
+	> li {
+		float:none;
+		@include inline-block();
+		top:0;
+		background: none;
+		vertical-align: top;
+		margin-bottom: 0;
+		a {
+			padding: 30px 15px;
+			padding-bottom: 28px;
+		}
+	}
+
+	li.current-menu-item a {
+		border-bottom: 4px solid #E03C34;
+	}
+	a {
+		color: $white;
+		padding:0;
+		background: none;
+		
+		&:hover{
+			color: $alt-color;
+		}
+
+	}
+
+	.nav-register a {
+		background: #fa433a;
+		border-bottom: 4px solid #d81006;
+		padding: 28px 24px 26px 24px;
+		margin-left: 15px;
+		box-shadow: 6px 0 15px -4px rgba(0, 0, 0, 0.8), -6px 0 15px -4px rgba(0, 0, 0, 0.8), inset 0 45px 0 rgba(0, 0, 0, 0.07);
+		font-size: 16px;
+		&:hover {
+			color: $white;
+		    background: #E03C34;
+		    box-shadow: none;
+		}
+	}
+}
+
+#utility-nav {
+	margin: 0 $base-unit 0 0;
+	a:hover {
+		color: $alt-color;
+	}
+}
+
+
+.toggle-menu, #mobile-menu-close {
+	font-size: 32px;
+	cursor: pointer;
+	color: $white;
+	outline: 0;
+	border: 0;
+	background: none !important;
+	width: auto!important;
+	min-width: 0;
+	padding: 0;
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	z-index: 3000;
+	&:hover {
+		color: $alt-color;
+	}
+}
+
+
+
+.st-menu ul li {
+	margin-bottom: 0;
+	a {
+		font-family: "futura-pt", sans-serif;
+		text-transform: uppercase;
+		-webkit-font-smoothing: antialiased;
+		padding: 0 $base-unit; 
+		background: none !important;
+		color: $white;
+		&:hover{
+			color: $alt-color;
+		}
+	}
+	&.nav-register a {
+		color: $alt-color;
+	}
+	&.current-menu-item {
+		border-left: 4px solid #E03C34;
+		a {
+			padding-left: $base-unit - 4px;
+		}
+	}
+}
+
+.st-menu {
+	background: $black;
+	.menu {
+		margin-top: 9px;
+		margin-right: 50px;
+	}
+	#utility-nav {
+		margin: 0 0 $base-unit 0;
+		font-size: 13px;
+		li {
+			margin: 0;
+			display: block;
+		}
+	}
+	.social-menu {
+		margin-left: $base-unit;
+	}
+
+	#mobile-menu-close {
+		color: lighten($black,30%);
+		&:hover {
+			color: $white;
+		}
+	}
+}

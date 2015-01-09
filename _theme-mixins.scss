@@ -1,0 +1,117 @@
+////////////////////////////////////
+//////         FONTS         ///////
+////////////////////////////////////
+
+@mixin font($weight:400, $style:normal){
+	font-family: "font" ,serif;
+	font-style: $style;
+	font-weight: $weight;
+}
+
+@mixin font($weight:400, $style:normal){
+	font-family: "font" ,serif;
+	font-style: $style;
+	font-weight: $weight;
+}
+
+
+///////////////////////////////////
+//////        MIXINS        ///////
+///////////////////////////////////
+
+// Button Style //
+@mixin button($color: $alt-color, $font-size: $btn-size) {
+	@include ease();
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1;
+	position: relative;
+	overflow: visible;
+
+	// Font Settings //
+	@include font-size($font-size);
+	font-family: $btn-font;
+	font-weight: 100;
+	color: $white;
+	text-decoration: none;
+	text-transform: uppercase;
+  text-shadow: none !important;
+  -webkit-font-smoothing: antialiased;
+
+	// Corners, Borders, and Padding //
+	@include rounded($radius);
+	border: 0px;
+  border: 1px solid $color;
+  padding: 10px;
+  padding-top: 9px;
+
+  background: $alt-color;
+  min-width: 100%;
+
+  @media screen and (min-width:$screen-xs-min){ 
+    min-width: 40%;
+  }
+
+  @media screen and (min-width:$screen-md-min){ 
+    min-width: 200px;
+  }
+  
+	&:hover {
+		// Background color and Gradient and Border //
+		background: shade($color,14%);
+    border-color: shade($color,14%);
+		color: $white;
+		
+	}
+
+	&:active {
+		top: 2px;
+	}
+}
+
+
+// Retina image 
+// usage: @include retina-image(..images/logo, 320px 80px)
+//
+@mixin retina-image($filename, $background-size, $extension: png, $retina-filename: null, $retina-suffix: \@2x, $asset-pipeline: false) {
+  @if $asset-pipeline {
+    background-image: image-url("#{$filename}.#{$extension}");
+  }
+  @else {
+    background-image:       url("#{$filename}.#{$extension}");
+  }
+
+  @include hidpi {
+    @if $asset-pipeline {
+      @if $retina-filename {
+        background-image: image-url("#{$retina-filename}.#{$extension}");
+      }
+      @else {
+        background-image: image-url("#{$filename}#{$retina-suffix}.#{$extension}");
+      }
+    }
+
+    @else {
+      @if $retina-filename {
+        background-image: url("#{$retina-filename}.#{$extension}");
+      }
+      @else {
+        background-image: url("#{$filename}#{$retina-suffix}.#{$extension}");
+      }
+    }
+
+    background-size: $background-size;
+
+  }
+}
+
+// HiDPI mixin. Default value set to 1.3 to target Google Nexus 7 (http://bjango.com/articles/min-device-pixel-ratio/)
+@mixin hidpi($ratio: 1.3) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+  only screen and (min--moz-device-pixel-ratio: $ratio),
+  only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+  only screen and (min-resolution: #{round($ratio*96)}dpi),
+  only screen and (min-resolution: #{$ratio}dppx) {
+    @content;
+  }
+}
